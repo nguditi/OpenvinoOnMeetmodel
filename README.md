@@ -1,5 +1,5 @@
-# openvino_meet_model
-Google meet model run in C++ project with open vino to optimize performance intel x64 machine
+# Openvino and google_meet_model, Why not ?!? 
+Google meet model run with openvino inference to optimize performance intel x64 machine
 
 # This project simulates Zoom Meeting virtual background flow:
 - Process meet_camera get input from camera to do meeting stub standalone.(x86,x64...)
