@@ -1,12 +1,11 @@
 # openvino_meet_model
-## Google meet model run in C++ project with open vino to optimize performance intel x64 machine
+Google meet model run in C++ project with open vino to optimize performance intel x64 machine
 
-## This project simulates Zoom Meeting virtual background flow:
+# This project simulates Zoom Meeting virtual background flow:
 - Process meet_camera get input from camera to do meeting stub standalone.(x86,x64...)
 - Process meet_segment support virtual background for meet_camera.(only x64 support by openvino)
 - These 2 process using share memory to comunicate.
-
-## This project solves the problem of architectural differences from x86 application and openvino toolkit support x64 app.
+**So this project solves the problem of architectural differences from x86 application and openvino toolkit support x64 app.**
 
 # Demo
 <video width="320" height="240" controls>
