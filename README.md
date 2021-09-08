@@ -10,8 +10,8 @@ Google meet model run in C++ project with open vino to optimize performance inte
 
 # Demo
 <video width="320" height="240" controls>
-  <source src="demo/demo.mp4" type="video/mp4">
+  <source src="/demo/demo.mp4" type="video/mp4">
 </video>
 <video width="320" height="240" controls>
-  <source src="demo/cpu_using.mp4" type="video/mp4">
+  <source src="/demo/cpu_using.mp4" type="video/mp4">
 </video>
