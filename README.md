@@ -9,9 +9,16 @@ Google meet model run with openvino inference to optimize performance in intel x
 **So this project solves the problem of architectural differences from x86 application and openvino toolkit support x64 app.**
 
 ## Demo
+**Awesome segment**
+
 https://user-images.githubusercontent.com/22221442/132448362-2cf5f0a8-4e2a-4716-9df1-f777b775df0e.mp4
 
+**Low CPU**
+
 https://user-images.githubusercontent.com/22221442/132448375-7a7eb5ac-bfa0-4d86-95fb-a66a6b722e6c.mp4
+
+**Just cpu processing, not using gpu**
+![](demo/cpu_using.png)
 
 ## Step to build
 - Install openvino tool kit and setup environment https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html
