@@ -10,7 +10,14 @@ Google meet model run in C++ project with open vino to optimize performance inte
 
 # Demo
 https://user-images.githubusercontent.com/22221442/132448362-2cf5f0a8-4e2a-4716-9df1-f777b775df0e.mp4
-
 https://user-images.githubusercontent.com/22221442/132448375-7a7eb5ac-bfa0-4d86-95fb-a66a6b722e6c.mp4
 
+# Step to build
+- Install openvino tool kit and setup environment https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html
+- Open meet_segment.sln visual studio Release x64
+- Check general link include in project point to right place (openvino, opencv)
+- Build meet_camera.exe & meet_segment.exe file
+- Run deploy script to copy dll and resource file to exe folder
 
+# How to run
+- Run meet_camera.exe in bin folder, meet_segment.exe auto start following
