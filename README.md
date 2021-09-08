@@ -11,9 +11,9 @@ Google meet model run with openvino inference to optimize performance in intel x
 ## Demo
 **Awesome segment**
 
-https://user-images.githubusercontent.com/22221442/132448362-2cf5f0a8-4e2a-4716-9df1-f777b775df0e.mp4
+https://user-images.githubusercontent.com/22221442/132448362-2cf5f0a8-4e2a-4716-9df1-f777b775df0e.mp4 
 
-**Low CPU**
+**Low CPU on Lenovo Thinkpad i5-8250U**
 
 https://user-images.githubusercontent.com/22221442/132448375-7a7eb5ac-bfa0-4d86-95fb-a66a6b722e6c.mp4
 
