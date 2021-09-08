@@ -1,0 +1,24 @@
+﻿  meet_segment.cpp
+d:\openvino_meet_model\meet_segment\meet_segment.cpp(74): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\openvino_meet_model\meet_segment\meet_segment.cpp(88): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+d:\openvino_meet_model\meet_segment\meet_segment.cpp(99): warning C4244: '=': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=uchar
+          ]
+d:\openvino_meet_model\meet_segment\meet_segment.cpp(100): warning C4244: '=': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=uchar
+          ]
+d:\openvino_meet_model\meet_segment\meet_segment.cpp(101): warning C4244: '=': conversion from 'double' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=uchar
+          ]
+  segmentation_meet.cpp
+  ShareMem.cpp
+  Generating code
+  All 1424 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  meet_segment.vcxproj -> D:\openvino_meet_model\bin\meet_segment.exe
