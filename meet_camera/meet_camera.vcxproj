@@ -95,7 +95,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_SCL_SECURE_NO_WARNINGS;NOMINMAX;NDEBUG;_CRT_SECURE_NO_WARNINGS;USE_OPENCV;GFLAGS_IS_A_DLL=0;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\include;D:\openvino_meet_model\meet_segment</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\include;..\meet_segment</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>

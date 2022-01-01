@@ -145,7 +145,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_SCL_SECURE_NO_WARNINGS;NOMINMAX;NDEBUG;_CRT_SECURE_NO_WARNINGS;USE_OPENCV;GFLAGS_IS_A_DLL=0;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files (x86)\Intel\openvino_2021\inference_engine\demos\common\monitors\include;C:\Program Files (x86)\Intel\openvino_2021\inference_engine\demos\common\include;C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\include;C:\Program Files (x86)\Intel\openvino_2021\deployment_tools\inference_engine\include;C:\Program Files (x86)\Intel\openvino_2021\inference_engine\demos\common\pipelines\include;C:\Program Files (x86)\Intel\openvino_2021\inference_engine\demos\common\models\include;C:\Users\LAP13011-local\Documents\Intel\OpenVINO\omz_demos_build\thirdparty\gflags\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include\thirdparty;..\include\common\monitors\include;..\include\common\include;..\include\common\pipelines\include;..\include\common\models\include;C:\Program Files (x86)\Intel\openvino_2021\deployment_tools\inference_engine\include;C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <DisableSpecificWarnings>4251;4275;4267</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
