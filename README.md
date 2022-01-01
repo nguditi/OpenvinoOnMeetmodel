@@ -34,3 +34,9 @@ https://user-images.githubusercontent.com/22221442/132448375-7a7eb5ac-bfa0-4d86-
 - https://github.com/PINTO0309/PINTO_model_zoo/tree/main/082_MediaPipe_Meet_Segmentation
 - https://github.com/Volcomix/virtual-background
 - https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html
+
+## Note:
+Script to build IR from ONNX:
+```
+python mo.py --input_model meet3.onnx --input_shape [1,144,256,3] --scale 255 --data_type FP32
+```
