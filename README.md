@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/22221442/132448375-7a7eb5ac-bfa0-4d86-
 ![](demo/cpu_using.png)
 
 ## Step to build
-- Install openvino tool kit and setup environment https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html
+- Install openvino tool kit openvino_2021.2.185 and setup environment https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html
 - Open meet_segment.sln visual studio Release x64
 - Check general link include in project point to right place (openvino, opencv)
 - Build meet_camera.exe & meet_segment.exe file
