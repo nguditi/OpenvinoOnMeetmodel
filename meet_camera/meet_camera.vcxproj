@@ -95,14 +95,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_SCL_SECURE_NO_WARNINGS;NOMINMAX;NDEBUG;_CRT_SECURE_NO_WARNINGS;USE_OPENCV;GFLAGS_IS_A_DLL=0;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files (x86)\Intel\openvino_2021\opencv\include;D:\virtual_background\meet_segment\meet_segment\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\include;D:\openvino_meet_model\meet_segment</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>C:\Program Files (x86)\Intel\openvino_2021\opencv\lib\opencv_highgui451.lib;C:\Program Files (x86)\Intel\openvino_2021\opencv\lib\opencv_videoio451.lib;C:\Program Files (x86)\Intel\openvino_2021\opencv\lib\opencv_imgcodecs451.lib;C:\Program Files (x86)\Intel\openvino_2021\opencv\lib\opencv_imgproc451.lib;C:\Program Files (x86)\Intel\openvino_2021\opencv\lib\opencv_core451.lib;pdh.lib;shlwapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\x64\vc15\staticlib\opencv_world455.lib;C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\x64\vc15\staticlib\ade.lib;C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\x64\vc15\staticlib\ippicvmt.lib;C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\x64\vc15\staticlib\ippiw.lib;C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\x64\vc15\staticlib\ittnotify.lib;C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\x64\vc15\staticlib\libjpeg-turbo.lib;C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\x64\vc15\staticlib\libpng.lib;C:\Users\LAP13011-local\Downloads\opencv-4.x\build\install\x64\vc15\staticlib\zlib.lib;pdh.lib;shlwapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

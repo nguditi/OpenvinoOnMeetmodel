@@ -94,7 +94,7 @@ int main()
 		processSegmentFrame(capImg);
 
 		cv::imshow("Camera source", capImg);
-		char key = (char)cv::waitKey(30);
+		char key = (char)cv::waitKey(20);
 		if (key == 27 || key == 'q'){
 			break;
 		}

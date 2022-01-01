@@ -150,33 +150,73 @@ bool SharedMemory::CreateNewEvent(LPSECURITY_ATTRIBUTES lpEventAttributes, bool 
 		}
 		return false;
 	}
-
+#if defined _WIN32 || defined _WIN64
 	Events.insert(std::pair<std::string, void*>(EventName, CreateEvent(lpEventAttributes, bManualReset, bInitialState, EventName.c_str())));
+#else
+	Events.insert(std::pair<std::string, void*>(EventName, sem_open(EventName.c_str(), O_CREAT | O_EXCL, 0666, 0);)
+#endif
 	it = Events.end();
 	return ((--it)->second != nullptr);
 }
 
 std::uint32_t SharedMemory::OpenSingleEvent(std::string EventName, bool InheritHandle, bool SaveHandle, std::uint32_t dwDesiredAccess, std::uint32_t dwMilliseconds)
 {
+#if defined _WIN32 || defined _WIN64
 	void* hEvent = OpenEvent(dwDesiredAccess, InheritHandle, EventName.c_str());
 	if (hEvent)
 	{
+#else
+	void* hEvent = sem_open(EventName.c_str(), 0);
+	if (hEvent != SEM_FAILED)
+	{
+#endif
 		if (SaveHandle)
 		{
 			std::map<std::string, void*>::iterator it = Events.find(EventName);
 			if (it != Events.end())
 			{
+#if defined _WIN32 || defined _WIN64
 				CloseHandle(it->second);
+#else
+				sem_close(it->second);
+				sem_unlink(EventName.c_str());
+#endif
 				it->second = hEvent;
 			}
 			else
 				Events.insert(std::pair<std::string, void*>(EventName, hEvent));
 		}
+#if defined _WIN32 || defined _WIN64
 		std::uint32_t Result = WaitForSingleObject(hEvent, dwMilliseconds);
 		if (!SaveHandle) CloseHandle(hEvent);
+#else
+		int Result;
+		struct timespec ts;
+		if (clock_gettime(CLOCK_REALTIME, &ts) == -1){
+			/* handle error */
+			return -1;
+		}
+		ts.tv_nsec += dwMilliseconds * 1000000;
+		while ((Result = sem_timedwait(hEvent, &ts)) == -1 && errno == EINTR)
+			continue;       /* Restart if interrupted by handler */
+		///* Check what happened */
+		//if (s == -1){
+		//	if (errno == ETIMEDOUT)
+		//		printf("sem_timedwait() timed out\n");
+		//	else
+		//		perror("sem_timedwait");
+		//}
+		//else
+		//	printf("sem_timedwait() succeeded\n");
+		if (!SaveHandle) sem_close(hEvent);
+#endif
 		return Result;
 	}
+#if defined _WIN32 || defined _WIN64
 	CloseHandle(hEvent);
+#else
+	sem_close(hEvent);
+#endif
 	return WAIT_FAILED;
 }
 
@@ -191,15 +231,27 @@ bool SharedMemory::SetEventSignal(std::string EventName, bool Signaled)
 		}
 		return false;
 	}
-	if (Signaled) return SetEvent(it->second);
+#if defined _WIN32 || defined _WIN64
+	if (Signaled) 
+		return SetEvent(it->second);
 	return ResetEvent(it->second);
+#else
+	if (Signaled)
+		return sem_post(it->second);
+	//sem auto reset after post;
+#endif
 }
 
 bool SharedMemory::DeleteSingleEvent(std::string EventName)
 {
 	std::map<std::string, void*>::iterator it = Events.find(EventName);
 	if (it == Events.end()) return true;
-	bool Result = CloseHandle(it->second);
+#if defined _WIN32 || defined _WIN64
+	bool Result =  CloseHandle(it->second);
+#else
+	bool Result = sem_close(it->second);
+	sem_unlink(EventName.c_str());
+#endif
 	Events.erase(it);
 	return Result;
 }
@@ -209,7 +261,11 @@ bool SharedMemory::DeleteAllEvents()
 	bool Result = false;
 	for (std::map<std::string, void*>::iterator it = Events.begin(); it != Events.end(); ++it)
 	{
+#if defined _WIN32 || defined _WIN64
 		Result = Result && CloseHandle(it->second);
+#else
+		Result = Result && sem_close(it->second);
+#endif
 	}
 	Events.clear();
 	return Result;
